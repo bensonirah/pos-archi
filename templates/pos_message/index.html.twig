@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}POS|Message{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <form action="{{ path('app_pos_message') }}" method="post">
+        <label for="message">
+            Message:
+            <input type="text" name="message">
+        </label>
+        <button type="submit">Register message</button>
+    </form>
+    {% if message %}
+        <p>{{ message|upper }}</p>
+    {% endif %}
+</div>
+{% endblock %}
